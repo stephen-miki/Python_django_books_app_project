@@ -154,9 +154,16 @@ AUTHENITICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend'
 )
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mailgun.org'
+EMAIL_HOST_USER = 'postmaster@sandboxdcc517d88e26478ca4be4cc16127cb73.mailgun.org'
+EMAIL_HOST_PASSWORD = 'f94ef3730d7776ffd6faab819de58bbc-8ed21946-41a205d3'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 #ACCOUNT_SESSION_REMEMBER = False
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
+
+DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com'
